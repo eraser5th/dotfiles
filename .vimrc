@@ -38,19 +38,20 @@ nnoremap <Leader>j 7j
 nnoremap <Leader>k 7k
 nnoremap <Leader>h 0
 nnoremap <Leader>j $
-nnoremap <Leader>jf gD
+nnoremap <Leader>jd gD
 nnoremap <Leader>jp gd
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+nnoremap <Leader><Leader> :
+nnoremap <Leader>' :terminal<CR>
+nnoremap x "_x
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 nmap <Leader>w [WINDOW]
-  nnoremap [WINDOW]s <C-W>
+  nnoremap [WINDOW]h <C-W>
   nnoremap [WINDOW]v :vs<CR>
   nnoremap [WINDOW]s :split<CR>
   nnoremap [WINDOW]d :q!<CR>
-  nnoremap <Leader><Leader> :
-  nnoremap <Leader>' :terminal<CR>
 nmap <Leader>t [TAB]
   nnoremap [TAB]l gt
   nnoremap [TAB]h gT
@@ -58,12 +59,8 @@ nmap <Leader>t [TAB]
   nnoremap [TAB]H :-tabmove<CR>
   nnoremap [TAB]d :tabclose<CR>
   nnoremap [TAB]n :tabnew<CR>
-nmap <Leader>f [FILE]
-  nnoremap [FILE] :<BS>
-  nnoremap [FILE]t :NERDTree<CR>
-" EasyMotion {{{
+nnoremap <Leader>n :ERDTree<CR>
 nnoremap <Leader>e <Plug>(easymotion-prefix)
-" }}}
 " }}}
 " inoremaps {{{
 inoremap jj <Esc>
@@ -73,6 +70,10 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap (<CR> (<CR>)<Esc>O
 inoremap '' ''<esc>i
 inoremap "" ""<esc>i
+inoremap <up> <nop>
+inoremap <left> <nop>
+inoremap <down> <nop>
+inoremap <right> <nop>
 " }}}
 " vnoremaps {{{
 " }}}
@@ -110,10 +111,14 @@ call dein#add('/Users/katotake/.cache/dein/repos/github.com/Shougo/dein.vim')
 let g:dein#install_process_timeout = 240
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
-call dein#add('preservim/nerdtree')
 call dein#add('easymotion/vim-easymotion')
-call dein#add('ycm-core/YouCompleteMe')
 call dein#add('sjl/gundo.vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('scrooloose/nerdtree')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('sheerun/vim-polyglot')
+call dein#add('junegunn/vim-easy-align')
 " }}}
 " Required: {{{
 call dein#end()
