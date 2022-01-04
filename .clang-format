@@ -1,0 +1,118 @@
+# 本家：https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# 自動翻訳：https://pystyle.info/apps/clang-format-editor/
+#
+# BasedOnStyle: LLVM
+
+AccessModifierOffset: -2
+
+AlignAfterOpenBracket: false
+
+AlignOperands: false
+
+AlignTrailingComments: true
+
+AllowAllArgumentsOnNextLine: false
+
+AllowAllConstructorInitializersOnNextLine: false
+
+AllowAllParametersOfDeclarationOnNextLine: false
+
+AllowShortBlocksOnASingleLine: Empty
+
+AllowShortFunctionsOnASingleLine: None
+
+AllowShortIfStatementsOnASingleLine: true
+
+AllowShortLambdasOnASingleLine: None
+
+AllowShortLoopsOnASingleLine: false
+
+AlwaysBreakAfterReturnType: None
+
+AlwaysBreakBeforeMultilineStrings: false
+
+AlwaysBreakTemplateDeclarations: Yes
+
+
+BinPackArguments: true
+
+BinPackParameters: true
+
+# BreakBeforeBraces
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: false
+  AfterControlStatement: Never
+  AfterFunction: false
+  AfterNamespace: false
+  AfterStruct: false
+  BeforeElse: false
+  BeforeWhile: false
+  IndentBraces: false
+
+# BreakBeforeConceptDeclarations: false
+
+ColumnLimit: 200
+
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+
+Cpp11BracedListStyle: false
+
+# EmptyLineAfterAccessModifier: Never
+# EmptyLineBeforeAccessModifier: LogicalBlock
+
+ForEachMacros: ['rep']
+
+IndentCaseLabels: true
+
+IndentWidth: 2
+
+NamespaceIndentation: All
+
+PointerAlignment: Right
+
+# Standard: Cpp17
+
+SpaceAfterCStyleCast: false
+
+SpaceAfterTemplateKeyword: true
+
+# SpaceAroundPointerQualifiers: Default
+
+SpaceBeforeAssignmentOperators: true
+
+# SpaceBeforeCaseColon: true
+
+SpaceBeforeCtorInitializerColon: false
+
+SpaceBeforeCpp11BracedList: false
+
+SpaceBeforeCtorInitializerColon: true
+
+SpaceBeforeParens: ControlStatements
+
+SpaceBeforeRangeBasedForLoopColon: false
+
+SpaceBeforeSquareBrackets: false
+
+SpaceInEmptyBlock: false
+
+SpaceInEmptyParentheses: false
+
+SpacesBeforeTrailingComments: 1
+
+SpacesInAngles: false
+
+SpacesInCStyleCastParentheses: false
+
+SpacesInConditionalStatement: false
+
+SpacesInContainerLiterals: false
+
+SpacesInParentheses: false
+
+SpacesInSquareBrackets: false
+
+TabWidth: 2
+
+UseTab: Never
