@@ -1,0 +1,20 @@
+
+# snipets {{{
+[[plugins]]
+repo = 'SirVer/ultisnips'
+on_ft = ['*']
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_ft = ['*']
+hook_add = '''
+let g:UltiSnipsExpandTrigger=';;'
+'''
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = ['json']
+
+# }}}
+# 条件式については以下を参照
+# https://leico.github.io/TechnicalNote/VimR/VimR-dein-toml

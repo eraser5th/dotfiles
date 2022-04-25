@@ -1,0 +1,202 @@
+# Required:
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# Add your plugins here {{{
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'
+
+# 代替 https://github.com/nathanaelkane/vim-indent-guides
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+'''
+
+# fern {{{
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_add = '''
+Source 'plugins/fern.vim'
+'''
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+[[plugins]]
+repo = 'yuki-yano/fern-preview.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-hijack.vim'
+# }}}
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+# fzf {{{
+[[plugins]]
+repo = '~/.fzf'
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+hook_add = '''
+Source 'plugins/fzf.vim'
+'''
+# }}}
+
+# git {{{
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+#}}}
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+# ale {{{
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+Source 'plugins/ale.vim'
+'''
+
+[[plugins]]
+repo = 'maximbaz/lightline-ale'
+# }}}
+
+[[plugins]]
+repo = "neoclide/coc.nvim"
+merge = 0
+rev = "release"
+hook_add = """
+Source 'plugins/coc.nvim.vim'
+"""
+hook_source = 'call coil398#init#coc#hook_source()'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+hook_add = '''
+xnoremap <Leader>c  <Plug>Commentary
+nnoremap <Leader>c  <Plug>Commentary
+onoremap gc  <Plug>Commentary
+'''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+hook_add = '''
+Source 'plugins/vim-surround.vim'
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_add = '''
+Source 'plugins/nvim-treesitter.vim'
+'''
+
+[[plugins]]
+repo = 'p00f/nvim-ts-rainbow'
+hook_add = '''
+lua <<EOF
+require("nvim-treesitter.configs").setup{
+  rainbow = {
+    enable = true,
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    colors = {
+      "#c6c6c6",
+      "#ff91a7",
+      "#ffa667",
+      "#f2e582",
+      "#87d46f",
+      "#6cd0dc",
+      "#80c1ff",
+    }, -- table of hex strings
+    termcolors = {
+      "Red",
+      "Green",
+      "Yellow",
+      "Blue",
+      "Magenta",
+      "Cyan",
+      "White",
+    }, -- table of colour name strings
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+  },
+}
+EOF
+'''
+
+[[plugins]]
+repo = 'Mofiqul/vscode.nvim'
+hook_add = '''
+" let g:vscode_style = "dark"
+" let g:vscode_transparent = 1
+" let g:vscode_italic_comment = 1
+" let g:vscode_disable_nvimtree_bg = v:true
+" colorscheme vscode
+'''
+[[plugins]]
+repo = 'ghifarit53/tokyonight-vim'
+hook_add = '''
+Source 'plugins/tokyonight-vim.vim'
+'''
+[[plugins]]
+repo = 'cocopon/pgmnt.vim'
+hook_add = '''
+'''
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+Source 'plugins/vim-easymotion.vim'
+'''
+
+[[plugins]]
+repo = 'gelguy/wilder.nvim'
+hook_add = '''
+Source 'plugins/wilder.vim'
+'''
+
+# [[plugins]]
+# repo = 'voldikss/vim-translator'
+# hook_add = '''
+# Source 'plugins/vim-translator.vim'
+# '''
+
+[[plugins]]
+repo = 'skanehira/translate.vim'
+hook_add = '''
+Source 'plugins/translate.vim'
+'''
+
+[[plugins]]
+repo = 'eraser5th/HololiveColors.vim'
+hook_add = '''
+let g:hololive_random = 1
+'''
+
+[[plugins]]
+repo = 'guns/xterm-color-table.vim'
+
+[[plugins]]
+repo = 'github/copilot.vim'
+
+[[plugins]]
+repo = 'skanehira/preview-markdown.vim'
+hook_add = '''
+nnoremap <Leader>pm :PreviewMarkdown left<CR>
+let g:preview_markdown_auto_update = 1
+let g:preview_markdown_parser = 'glow'
+'''
+
+# hook_add = '''statement''' 読み込み時に設定する
+# フックについては以下を参照
+# https://leico.github.io/TechnicalNote/VimR/VimR-dein-toml
