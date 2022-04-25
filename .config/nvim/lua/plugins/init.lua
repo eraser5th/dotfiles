@@ -72,10 +72,7 @@ local function loadSetting()
     vim.cmd('Source "plugins/nvim-treesitter.vim"')
   end
   if jetpack.tap('tokyonight-vim') == 1 then
-    vim.cmd('Source "plugins/tokyonight-vim.vim"')
-  end
-  if jetpack.tap('tokyonight-vim.vim') == 1 then
-    vim.cmd('Source "plugins/tokyonight-vim.vim"')
+    require('plugins.tokyonight-vim')
   end
   if jetpack.tap('vim-easymotion') == 1 then
     vim.cmd('Source "plugins/vim-easymotion.vim"')
