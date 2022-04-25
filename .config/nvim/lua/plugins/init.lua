@@ -66,6 +66,7 @@ local function loadSetting()
   end
   if jetpack.tap('plugins/coc.nvim') == 1 then
     vim.cmd('Source "plugins/coc.nvim.vim"')
+    require('plugins.coc.nvim')
   end
   if jetpack.tap('nvim-treesitter') == 1 then
     vim.cmd('Source "plugins/nvim-treesitter.vim"')
