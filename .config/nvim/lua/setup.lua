@@ -1,13 +1,16 @@
 local vim = vim
 local util = require('util')
 
-local modules = {
+local vim_modules = {
   'lib/commands.vim',
   'options/set.vim',
   'options/isKeyword.vim',
   'dein.vim',
-  'neovide.vim',
-  -- 'keymaps/keymaps.vim',
+}
+
+local lua_modules = {
+  'keymaps',
+  'neovide',
 }
 
 local M = {
@@ -16,10 +19,12 @@ local M = {
     vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
     vim.g.python_host_prog = '/usr/bin/python2'
 
-    require('keymaps')
-
-    util.forEach(modules, function(module, _)
+    util.forEach(vim_modules, function(module, _)
       util.source(vim.g.root_path .. '/' .. module)
+    end)
+
+    util.forEach(lua_modules, function(module, _)
+      require(module)
     end)
   end
 }
