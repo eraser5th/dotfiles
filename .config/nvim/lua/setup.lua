@@ -3,13 +3,13 @@ local util = require('util')
 
 local vim_modules = {
   'lib/commands.vim',
-  'options/set.vim',
   'options/isKeyword.vim',
   'dein.vim',
 }
 
 local lua_modules = {
   'keymaps',
+  'set',
   'neovide',
 }
 
