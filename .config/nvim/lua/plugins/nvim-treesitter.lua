@@ -1,4 +1,3 @@
-lua <<EOF
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
     "typescript",
@@ -24,4 +23,3 @@ require('nvim-treesitter.configs').setup {
     enable_autocmd = false,
   },
 }
-EOF

@@ -69,7 +69,7 @@ local function loadSetting()
     require('plugins.coc.nvim')
   end
   if jetpack.tap('nvim-treesitter') == 1 then
-    vim.cmd('Source "plugins/nvim-treesitter.vim"')
+    require('plugins.nvim-treesitter')
   end
   if jetpack.tap('tokyonight-vim') == 1 then
     require('plugins.tokyonight-vim')
