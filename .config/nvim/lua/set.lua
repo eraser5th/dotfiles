@@ -68,8 +68,8 @@ set.clipboard = 'unnamed'
 -- time out {{{
 set.timeout = true
 set.timeoutlen = 800
-vim.cmd('AutoCmd InsertLeave * set.timeout timeoutlen=800')
-vim.cmd('AutoCmd InsertLeave * set.timeout timeoutlen=300')
+vim.cmd('AutoCmd InsertLeave * set timeout timeoutlen=800')
+vim.cmd('AutoCmd InsertLeave * set timeout timeoutlen=300')
 -- time out }}}
 
 -- foldmethod {{{
