@@ -62,7 +62,7 @@ local function loadSetting()
     vim.cmd('Source "plugins/fzf.vim"')
   end
   if jetpack.tap('ale') == 1 then
-    require('ale.vim')
+    require('plugins.ale')
   end
   if jetpack.tap('plugins/coc.nvim') == 1 then
     vim.cmd('Source "plugins/coc.nvim.vim"')
