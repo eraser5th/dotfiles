@@ -3,7 +3,6 @@ local util = require('util')
 
 local vim_modules = {
   'lib/commands.vim',
-  'options/isKeyword.vim',
 }
 
 local lua_modules = {
