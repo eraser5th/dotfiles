@@ -1,0 +1,32 @@
+{
+  "title": "disable pgup and pgdown",
+  "rules": [
+    {
+      "description": "disable pgup and pgdown",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "page_up",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+          ],
+          "type": "basic"
+        },
+        {
+          "from": {
+            "key_code": "page_down",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

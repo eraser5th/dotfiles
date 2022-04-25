@@ -1,0 +1,21 @@
+{
+    "title": "Swap left-ctrl and command except in Terminal",
+    "rules": [
+        {
+            "description": "Swap left-ctrl and command except in Terminal",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_control"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}
