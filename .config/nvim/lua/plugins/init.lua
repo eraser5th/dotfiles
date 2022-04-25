@@ -61,26 +61,29 @@ local function loadSetting()
   if jetpack.tap('fzf.vim') == 1 then
     vim.cmd('Source "plugins/fzf.vim"')
   end
-  if jetpack.tap('ale.vim') == 1 then
-    vim.cmd('Source "plugins/ale.vim"')
+  if jetpack.tap('ale') == 1 then
+    require('ale.vim')
   end
-  if jetpack.tap('plugins/coc.nvim.vim') == 1 then
+  if jetpack.tap('plugins/coc.nvim') == 1 then
     vim.cmd('Source "plugins/coc.nvim.vim"')
   end
-  if jetpack.tap('nvim-treesitter.vim') == 1 then
+  if jetpack.tap('nvim-treesitter') == 1 then
     vim.cmd('Source "plugins/nvim-treesitter.vim"')
   end
-  if jetpack.tap('tokyonight-vim.vim') == 1 then
+  if jetpack.tap('tokyonight-vim') == 1 then
     vim.cmd('Source "plugins/tokyonight-vim.vim"')
   end
   if jetpack.tap('tokyonight-vim.vim') == 1 then
     vim.cmd('Source "plugins/tokyonight-vim.vim"')
   end
-  if jetpack.tap('vim-easymotion.vim') == 1 then
+  if jetpack.tap('vim-easymotion') == 1 then
     vim.cmd('Source "plugins/vim-easymotion.vim"')
   end
   if jetpack.tap('plugins/translate.vim') == 1 then
     vim.cmd('Source "plugins/translate.vim"')
+  end
+  if jetpack.tap('HololiveColors.vim') == 1 then
+    vim.g.hololive_random = 1
   end
   if jetpack.tap('preview-markdown.vim') == 1 then
     vim.cmd([[
