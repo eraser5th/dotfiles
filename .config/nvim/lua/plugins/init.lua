@@ -78,7 +78,7 @@ local function loadSetting()
     vim.cmd('Source "plugins/vim-easymotion.vim"')
   end
   if jetpack.tap('plugins/translate.vim') == 1 then
-    vim.cmd('Source "plugins/translate.vim"')
+    require('plugins.translate.vim.lua')
   end
   if jetpack.tap('HololiveColors.vim') == 1 then
     vim.g.hololive_random = 1
