@@ -42,6 +42,7 @@ jetpack.startup(function(use)
   -- colorscheme
   use { 'ghifarit53/tokyonight-vim', run = "Source 'plugins/tokyonight-vim.vim'" }
   use { 'eraser5th/HololiveColors.vim', run = "let g:hololive_random = 1" }
+  use { "EdenEast/nightfox.nvim" }
 
   -- util
   use { 'easymotion/vim-easymotion', run = "Source 'plugins/vim-easymotion.vim'" }
@@ -78,8 +79,12 @@ local function loadSetting()
   if jetpack.tap('vim-easymotion') == 1 then
     require('plugins.vim-easymotion')
   end
-  if jetpack.tap('HololiveColors.vim') == 1 then
-    vim.g.hololive_random = 1
+  -- if jetpack.tap('HololiveColors.vim') == 1 then
+    -- vim.g.hololive_random = 1
+  -- end
+  if jetpack.tap('nightfox.nvim') == 1 then
+    vim.cmd("colorscheme nightfox")
+    vim.g.lightline = { colorscheme = "nightfox" }
   end
   if jetpack.tap('preview-markdown.vim') == 1 then
     vim.cmd([[
