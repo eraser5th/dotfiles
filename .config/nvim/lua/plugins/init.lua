@@ -45,7 +45,7 @@ jetpack.startup(function(use)
 
   -- util
   use { 'easymotion/vim-easymotion', run = "Source 'plugins/vim-easymotion.vim'" }
-  use { 'skanehira/translate.vim', run = "Source 'plugins/translate.vim'" }
+  use { 'skanehira/translate.vim' }
   use { 'github/copilot.vim' }
   use { 'skanehira/preview-markdown.vim', run = [[
       nnoremap <Leader>pm :PreviewMarkdown left<CR>
@@ -77,9 +77,6 @@ local function loadSetting()
   end
   if jetpack.tap('vim-easymotion') == 1 then
     require('plugins.vim-easymotion')
-  end
-  if jetpack.tap('plugins/translate.vim') == 1 then
-    require('plugins.translate.vim.lua')
   end
   if jetpack.tap('HololiveColors.vim') == 1 then
     vim.g.hololive_random = 1
