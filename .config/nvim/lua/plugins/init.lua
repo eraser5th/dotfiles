@@ -76,7 +76,7 @@ local function loadSetting()
     require('plugins.tokyonight-vim')
   end
   if jetpack.tap('vim-easymotion') == 1 then
-    vim.cmd('Source "plugins/vim-easymotion.vim"')
+    require('plugins.vim-easymotion')
   end
   if jetpack.tap('plugins/translate.vim') == 1 then
     require('plugins.translate.vim.lua')
