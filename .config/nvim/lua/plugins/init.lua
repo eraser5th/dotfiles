@@ -52,6 +52,7 @@ jetpack.startup(function(use)
       let g:preview_markdown_auto_update = 1
       let g:preview_markdown_parser = 'glow'
     ]] }
+  use { 'gelguy/wilder.nvim', run = "Source 'plugins/wilder.nvim'" }
 end)
 
 local function loadSetting()
@@ -89,6 +90,9 @@ local function loadSetting()
       let g:preview_markdown_auto_update = 1
       let g:preview_markdown_parser = 'glow'
     ]])
+  end
+  if jetpack.tap('wilder.nvim') == 1 then
+    require('plugins.wilder-nvim')
   end
 end
 
