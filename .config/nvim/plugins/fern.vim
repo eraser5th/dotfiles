@@ -2,7 +2,7 @@ let g:fern#renderer = 'nerdfont'
 
 nmap <Leader>f [fern]
   nnoremap [fern]w :Fern . -reveal=%<CR>
-  nnoremap [fern]w :Fern . -reveal=%<CR>
+  nnoremap [fern]d :Fern . -reveal=% -drawer<CR>
 
 function! s:fern_settings() abort
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
