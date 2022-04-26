@@ -60,7 +60,7 @@ local function loadSetting()
     vim.cmd('Source "plugins/fern.vim"')
   end
   if jetpack.tap('fzf.vim') == 1 then
-    vim.cmd('Source "plugins/fzf.vim"')
+    require('plugins.fzf')
   end
   if jetpack.tap('ale') == 1 then
     require('plugins.ale')
