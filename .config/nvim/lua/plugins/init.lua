@@ -1,4 +1,5 @@
 local jetpack = require('jetpack')
+local util = require('util')
 local vim = vim
 
 --- @class Plugin
@@ -12,49 +13,49 @@ local vim = vim
   -- @fields for : On-demand loading: File types
   -- @fields frpzen : Do not update
 
-jetpack.startup(function(use)
-  use { 'itchyny/lightline.vim' }
-  use { 'Yggdroot/indentLine' }
+jetpack.setup({
+  { 'itchyny/lightline.vim' },
+  { 'Yggdroot/indentLine' },
 
   -- fern
-  use { 'lambdalisue/fern.vim', run = "Source 'plugins/fern.vim'" }
-  use   'lambdalisue/fern-git-status.vim'
-  use   'lambdalisue/nerdfont.vim'
-  use   'lambdalisue/glyph-palette.vim'
-  use   'lambdalisue/fern-renderer-nerdfont.vim'
-  use   'lambdalisue/fern-hijack.vim'
-  use   'yuki-yano/fern-preview.vim'
+  { 'lambdalisue/fern.vim', run = "Source 'plugins/fern.vim'" },
+    { 'lambdalisue/fern-git-status.vim' },
+    { 'lambdalisue/nerdfont.vim' },
+    { 'lambdalisue/glyph-palette.vim' },
+    { 'lambdalisue/fern-renderer-nerdfont.vim' },
+    { 'lambdalisue/fern-hijack.vim' },
+    { 'yuki-yano/fern-preview.vim' },
 
   -- fazy finder
-  use { '~/.fzf' }
-  use { 'junegunn/fzf.vim', run = "Source 'plugins/fzf.vim'" }
+  { '~/.fzf' },
+  { 'junegunn/fzf.vim', run = "Source 'plugins/fzf.vim'" },
 
   -- git
-  use { 'tpope/vim-fugitive' }
-  use { 'airblade/vim-gitgutter' }
+  { 'tpope/vim-fugitive' },
+  { 'airblade/vim-gitgutter' },
 
   -- lsp
-  use { 'dense-analysis/ale', run = "Source 'plugins/ale.vim'" }
-  use { 'maximbaz/lightline-ale' }
-  use { "neoclide/coc.nvim", branch = 'release', run = "Source 'plugins/coc.nvim.vim'" }
-  use { 'nvim-treesitter/nvim-treesitter', run = "Source 'plugins/nvim-treesitter.vim'"}
+  { 'dense-analysis/ale', run = "Source 'plugins/ale.vim'" },
+  { 'maximbaz/lightline-ale' },
+  { "neoclide/coc.nvim", branch = 'release', run = "Source 'plugins/coc.nvim.vim'" },
+  { 'nvim-treesitter/nvim-treesitter', run = "Source 'plugins/nvim-treesitter.vim'"},
 
   -- colorscheme
-  use { 'ghifarit53/tokyonight-vim', run = "Source 'plugins/tokyonight-vim.vim'" }
-  use { 'eraser5th/HololiveColors.vim', run = "let g:hololive_random = 1" }
-  use { "EdenEast/nightfox.nvim" }
+  { 'ghifarit53/tokyonight-vim', run = "Source 'plugins/tokyonight-vim.vim'" },
+  { 'eraser5th/HololiveColors.vim', run = "let g:hololive_random = 1" },
+  { "EdenEast/nightfox.nvim" },
 
   -- util
-  use { 'easymotion/vim-easymotion', run = "Source 'plugins/vim-easymotion.vim'" }
-  use { 'skanehira/translate.vim' }
-  use { 'github/copilot.vim' }
-  use { 'skanehira/preview-markdown.vim', run = [[
+  { 'easymotion/vim-easymotion', run = "Source 'plugins/vim-easymotion.vim'" },
+  { 'skanehira/translate.vim' },
+  { 'github/copilot.vim' },
+  { 'skanehira/preview-markdown.vim', run = [[
       nnoremap <Leader>pm :PreviewMarkdown left<CR>
       let g:preview_markdown_auto_update = 1
       let g:preview_markdown_parser = 'glow'
-    ]] }
-  use { 'gelguy/wilder.nvim', run = "Source 'plugins/wilder.nvim'" }
-end)
+    ]] },
+  { 'gelguy/wilder.nvim', run = "Source 'plugins/wilder.nvim'" },
+})
 
 local function loadSetting()
   if jetpack.tap('fern.vim') == 1 then
@@ -97,5 +98,7 @@ local function loadSetting()
     require('plugins.wilder-nvim')
   end
 end
+
+util.setKeymap({'n', '<Leader>ls', loadSetting})
 
 loadSetting()
