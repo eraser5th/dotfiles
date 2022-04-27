@@ -14,6 +14,8 @@ local vim = vim
   -- @fields frpzen : Do not update
 
 jetpack.setup({
+  { 'vim-denops/denops.vim' },
+    { 'vim-denops/denops-helloworld.vim' },
   { 'itchyny/lightline.vim' },
   { 'Yggdroot/indentLine' },
 
