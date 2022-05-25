@@ -2,11 +2,15 @@ local util = require('util')
 local vim = vim
 local set = vim.opt
 
+local function show_documentation()
+  vim.cmd('call CocActionAsync("do_hover")')
+end
+
 local keyMappings = {
   { 'n', 'gd', '<Plug>(coc-definition)', { remap = true } },
   { 'n', 'gi', '<Plug>(coc-implementation)', { remap = true } },
   { 'n', 'gr', '<Plug>(coc-references)', { remap = true } },
-  { 'n', 'K',  ':call CocAction("doHover")<CR>' },
+  { 'n', 'K',  show_documentation },
 }
 
 util.forEach(
