@@ -162,4 +162,5 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="/opt/homebrew/lib/ruby/gems/3.1.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-" export PATH="$HOME/nvim-osx64/bin:$PATH"
+# export PATH="$HOME/nvim-osx64/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
