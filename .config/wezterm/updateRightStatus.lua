@@ -11,9 +11,7 @@ local function create_cwd_cell(pane)
 end
 
 local function create_date_cell()
-  return icons.CLOCK
-    .. " "
-    .. wezterm.strftime("%a %b %-d %H:%M:%S");
+  return icons.CLOCK .. wezterm.strftime(" %a %b %-d %H:%M:%S");
 end
 
 local function create_battery_cell()
@@ -26,10 +24,10 @@ local function create_battery_cell()
     is_charging
   )
 
-  return BATTERY .. string.format("  %.0f%%", battery_percentage)
+  return BATTERY .. string.format(" %.0f%%", battery_percentage)
 end
 
-return function(window, pane)
+local function create_elements_by_cells(cells)
   local text_fg = "#c0c0c0";
   local colors = {
     "#3c1361",
@@ -40,23 +38,26 @@ return function(window, pane)
   };
 
   local elements = {};
-  local num_cells = 0;
 
-  local function push(text, _)
-    local cell_no = num_cells + 1
-    table.insert(elements, {Foreground={Color=colors[cell_no]}})
+  local function push(text, i)
+    table.insert(elements, {Foreground={Color=colors[i]}})
     table.insert(elements, {Text=icons.SOLID_LEFT_ARROW})
     table.insert(elements, {Foreground={Color=text_fg}})
-    table.insert(elements, {Background={Color=colors[cell_no]}})
+    table.insert(elements, {Background={Color=colors[i]}})
     table.insert(elements, {Text=" "..text.." "})
-    num_cells = num_cells + 1
   end
 
-  util.forEach({
+  util.forEach(cells, push)
+
+  return elements
+end
+
+return function(window, pane)
+  local elements = create_elements_by_cells({
     create_cwd_cell(pane),
     create_date_cell(),
     create_battery_cell(),
-  }, push)
+  })
 
   window:set_right_status(wezterm.format(elements));
 end
