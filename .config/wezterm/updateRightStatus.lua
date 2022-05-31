@@ -30,8 +30,6 @@ local function create_battery_cell()
 end
 
 return function(window, pane)
-  local cells = {};
-
   local text_fg = "#c0c0c0";
   local colors = {
     "#3c1361",
@@ -40,10 +38,6 @@ return function(window, pane)
     "#7c5295",
     "#b491c8",
   };
-
-  table.insert(cells, create_cwd_cell(pane))
-  table.insert(cells, create_date_cell());
-  table.insert(cells, create_battery_cell())
 
   local elements = {};
   local num_cells = 0;
@@ -58,7 +52,11 @@ return function(window, pane)
     num_cells = num_cells + 1
   end
 
-  util.forEach(cells, push)
+  util.forEach({
+    create_cwd_cell(pane),
+    create_date_cell(),
+    create_battery_cell(),
+  }, push)
 
   window:set_right_status(wezterm.format(elements));
 end
