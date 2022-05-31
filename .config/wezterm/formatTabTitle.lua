@@ -1,7 +1,9 @@
 local wezterm = require 'wezterm';
 
 local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+local SOLID_LEFT_HALF_CIRCLE = utf8.char(0xe0b6)
 local SOLID_RIGHT_ARROW = utf8.char(0xe0b0)
+local SOLID_RIGHT_HALF_CIRCLE = utf8.char(0xe0b4)
 
 return function(tab, _, _, _, hover, max_width)
   local edge_background = "#0b0022"
@@ -32,12 +34,12 @@ return function(tab, _, _, _, hover, max_width)
   return {
     {Background={Color=edge_background}},
     {Foreground={Color=edge_foreground}},
-    {Text=SOLID_LEFT_ARROW},
+    {Text=SOLID_LEFT_HALF_CIRCLE},
     {Background={Color=background}},
     {Foreground={Color=foreground}},
     {Text=title},
     {Background={Color=edge_background}},
     {Foreground={Color=edge_foreground}},
-    {Text=SOLID_RIGHT_ARROW},
+    {Text=SOLID_RIGHT_HALF_CIRCLE},
   }
 end
