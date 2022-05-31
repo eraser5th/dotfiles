@@ -27,7 +27,17 @@ local function create_battery_cell()
   return BATTERY .. string.format(" %.0f%%", battery_percentage)
 end
 
-local function create_elements_by_cells(cells)
+local function create_element(cell, fg_color, bg_color)
+  return {
+    {Foreground={Color=bg_color}},
+    {Text=icons.SOLID_LEFT_ARROW},
+    {Foreground={Color=fg_color}},
+    {Background={Color=bg_color}},
+    {Text=" " .. cell .. " "},
+  }
+end
+
+return function(window, pane)
   local text_fg = "#c0c0c0";
   local colors = {
     "#3c1361",
@@ -37,27 +47,17 @@ local function create_elements_by_cells(cells)
     "#b491c8",
   };
 
-  local elements = {};
-
-  local function push(text, i)
-    table.insert(elements, {Foreground={Color=colors[i]}})
-    table.insert(elements, {Text=icons.SOLID_LEFT_ARROW})
-    table.insert(elements, {Foreground={Color=text_fg}})
-    table.insert(elements, {Background={Color=colors[i]}})
-    table.insert(elements, {Text=" "..text.." "})
-  end
-
-  util.forEach(cells, push)
-
-  return elements
-end
-
-return function(window, pane)
-  local elements = create_elements_by_cells({
+  local cells = {
     create_cwd_cell(pane),
     create_date_cell(),
     create_battery_cell(),
-  })
+  }
 
-  window:set_right_status(wezterm.format(elements));
+  local elements = util.map(cells, function(cell, i)
+    return create_element(cell, text_fg, colors[i])
+  end)
+  
+  window:set_right_status(wezterm.format(
+    util.flat(elements)
+  ));
 end
