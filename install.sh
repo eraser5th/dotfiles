@@ -11,5 +11,6 @@ ln -snfv ${PWD}/.vimrc ~/
 ln -snfv ${PWD}/.zshrc ~/
 ln -snfv ${PWD}/vim ~/
 ln -snfv ${PWD}/.clang-format ~/
+ln -snfv ${PWD}/.tmux.conf ~/
 ln -snfv ${PWD}/.config/nvim ~/.config/
 ln -snfv ${PWD}/.config/karabiner ~/.config/

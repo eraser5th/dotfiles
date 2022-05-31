@@ -33,7 +33,6 @@ unmapAll
 
 # Navigating the page
 
-
 map j scrollDown
 map <c-e> scrollDown
 map k scrollUp
