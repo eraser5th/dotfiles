@@ -16,7 +16,10 @@ local icons = {
   BATTERY_3 = utf8.char(0xf241),
   BATTERY_4 = utf8.char(0xf240),
   CLOCK = utf8.char(0xf64f),
+  SOLID_RIGHT_ARROW = utf8.char(0xe0b0),
   SOLID_LEFT_ARROW = utf8.char(0xe0b2),
+  SOLID_RIGHT_HALF_CIRCLE = utf8.char(0xe0b4),
+  SOLID_LEFT_HALF_CIRCLE = utf8.char(0xe0b6),
 }
 
 icons.fn = {
