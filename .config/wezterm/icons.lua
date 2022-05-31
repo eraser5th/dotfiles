@@ -25,7 +25,7 @@ local icons = {
 icons.fn = {
   BATTERY = function (percent, isCharging)
     if isCharging then
-      return 
+      return icons.BATTERY_CHARGING
     end
 
     if percent <= 10 then return icons.BATTERY_10
