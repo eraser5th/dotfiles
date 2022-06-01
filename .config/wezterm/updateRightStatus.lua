@@ -18,12 +18,10 @@ local function create_battery_cell()
   local battery_info = wezterm.battery_info()[1]
   local battery_percentage = battery_info.state_of_charge * 100
   local is_charging = battery_info.state == 'Charging'
-
   local BATTERY = icons.fn.BATTERY(
     battery_percentage,
     is_charging
   )
-
   return BATTERY .. string.format(" %.0f%%", battery_percentage)
 end
 
@@ -56,7 +54,7 @@ return function(window, pane)
   local elements = util.map(cells, function(cell, i)
     return create_element(cell, text_fg, colors[i])
   end)
-  
+
   window:set_right_status(wezterm.format(
     util.flat(elements)
   ));
