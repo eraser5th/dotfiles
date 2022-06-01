@@ -26,7 +26,7 @@ M.colors = {
 
 M.font = wezterm.font("JetBrainsMono NF")
 
-M.font_size = 15.0
+M.font_size = 13.0
 
 M.color_scheme = "lovelace"
 
