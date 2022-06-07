@@ -11,31 +11,17 @@ fi
 # }}}
 
 # aliass {{{
-alias ydl="youtube-dl"
-alias ydln="ydl --external-downloader aria2c --external-downloader-args '-c -x 5 -k 2M'"
-alias ydlnl="ydln --list-format"
-alias ydlm="ydln --netrc --cookie ~/Downloads/youtube.com_cookies.txt"
-alias ydlml="ydlm --list-format"
-alias ydlnb="ydln -f \"bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]\""
 alias ls="ls -FG"
 alias lsl="ls -lFG"
 alias lsa="ls -aFG"
 alias lsla="ls -laFG"
 alias vimz="vim ~/.zshrc"
 alias setz="source ~/.zshrc"
-alias sshs="ssh s1290132@sshgate.u-aizu.ac.jp"
-alias sftps="sftp s1290132@sshgate.u-aizu.ac.jp"
-alias cdat="cd ~/workspace/atcoder"
-alias ls.="lsa | grep \"^\\.\" "
 alias rmtex="rm -f *.dvi *.aux *.log *.nav *.out *.snm *.toc"
 alias path="echo $PATH"
 alias cd='(){cd $1 ; pwd ; echo "" ; ls}'
 alias vim='nvim'
-alias vimrc='cd; vim $HOME/.config/nvim/init.vim; cd -'
-alias v.='nvim .'
-alias npmlts='nvm install --lts'
 alias memo='cd; nvim ~/memo/$(date "+%Y/%m/%d.md"); cd -'
-alias swi='swift'
 alias uvim='NODE_ENV=production electron $HOME/workspace/uivonim/build/main/main.js'
 alias vimcoder='command vim -u NONE -i NONE -N -n'
 alias cvim='./~/nvim-osx64/bin/nvim'
@@ -96,7 +82,7 @@ function left-prompt {
 
   task=`unfog status 2> /dev/null`
 
-  echo "\n${user} ${dir}${reset}${task}\n${text_color}${arrow_color} ⇒ "
+  echo "${user} ${dir}${reset}${task}\n${text_color}${arrow_color} ⇒ "
 }
 
 PROMPT=`left-prompt`
