@@ -37,7 +37,7 @@ end
 
 return function(window, pane)
   local text_fg = "#c0c0c0";
-  local colors = {
+  local bg_colors = {
     "#3c1361",
     "#52307c",
     "#663a82",
@@ -52,7 +52,7 @@ return function(window, pane)
   }
 
   local elements = util.map(cells, function(cell, i)
-    return create_element(cell, text_fg, colors[i])
+    return create_element(cell, text_fg, bg_colors[i])
   end)
 
   window:set_right_status(wezterm.format(
