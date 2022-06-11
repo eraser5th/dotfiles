@@ -85,8 +85,9 @@ local function loadSetting()
     -- vim.g.hololive_random = 1
   -- end
   if jetpack.tap('nightfox.nvim') == 1 then
-    vim.cmd("colorscheme nightfox")
-    vim.g.lightline = { colorscheme = "nightfox" }
+    require('plugins.nightfox')
+    vim.cmd("colorscheme duskfox")
+    vim.g.lightline = { colorscheme = "duskfox" }
   end
   if jetpack.tap('preview-markdown.vim') == 1 then
     vim.cmd([[

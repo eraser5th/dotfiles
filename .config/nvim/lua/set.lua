@@ -5,11 +5,11 @@ local set = vim.opt
 set.updatetime = 250
 
 -- Search {{{
-set.hlsearch = true -- 検索文字列に色を付ける
-set.ignorecase = true -- 検索時に大文字小文字を区別しない (noignorecase:区別する)
-set.smartcase = true -- 大文字小文字の両方が含まれている場合は大文字小文字を区別
-set.wrapscan = true -- 検索時にファイルの最後まで行ったら最初に戻る (nowrapscan:戻らない)
---set.gdefault = true -- 置換時に「/g」をデフォルトで有効にする
+set.hlsearch = true
+set.ignorecase = true
+set.smartcase = true
+set.wrapscan = true
+set.gdefault = true
 -- }}}
 
 -- Edit {{{
@@ -37,11 +37,11 @@ set.list = true
 set.wrap = true
 set.breakindent = true
 set.linebreak = true
-set.pumheight = 10    -- 補完メニューの高さ(デフォルト：0(無制限))
+set.pumheight = 5
 -- Display }}}
 
 -- Cursor {{{
-set.whichwrap = 'b,s,h,l' -- hやlによるカーソル移動で行をまたぐようにする 初期値：b,s
+set.whichwrap = 'b,s,h,l'
 set.scrolloff = 8
 -- Cursor }}}
 
@@ -71,11 +71,5 @@ set.timeoutlen = 800
 vim.cmd('AutoCmd InsertLeave * set timeout timeoutlen=800')
 vim.cmd('AutoCmd InsertLeave * set timeout timeoutlen=300')
 -- time out }}}
-
--- foldmethod {{{
--- AutoCmd FileType * setlocal foldmethod=marker foldlevel=100
--- AutoCmd FileType * setlocal foldmethod=syntax foldlevel=100
---set.foldcolumn=4
--- }}}
 
 set.guifont = 'VictorMono Nerd Font:h13'
