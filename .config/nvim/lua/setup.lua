@@ -2,7 +2,7 @@ local vim = vim
 local util = require('util')
 
 local vim_modules = {
-  'lib/commands.vim',
+  'commands.vim',
 }
 
 local lua_modules = {
@@ -19,7 +19,7 @@ local M = {
     vim.g.python_host_prog = '/usr/bin/python2'
 
     util.forEach(vim_modules, function(module, _)
-      util.source(vim.g.root_path .. '/' .. module)
+      util.source(vim.g.root_path .. '/vim/' .. module)
     end)
 
     util.forEach(lua_modules, function(module, _)
