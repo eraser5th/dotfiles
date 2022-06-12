@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm';
 local util = require 'util';
+local git = require 'git';
 local icons = require('icons')
 
 local function create_cwd_cell(pane)
@@ -25,6 +26,10 @@ local function create_battery_cell()
   return BATTERY .. string.format(" %.0f%%", battery_percentage)
 end
 
+local function create_branch_cell()
+  return icons.GIT_BRANCH .. ' ' .. git.get_branch_name()
+end
+
 local function create_element(cell, fg_color, bg_color)
   return {
     {Foreground={Color=bg_color}},
@@ -36,6 +41,7 @@ local function create_element(cell, fg_color, bg_color)
 end
 
 return function(window, pane)
+
   local text_fg = "#c0c0c0";
   local bg_colors = {
     "#3c1361",
@@ -49,6 +55,7 @@ return function(window, pane)
     create_cwd_cell(pane),
     create_date_cell(),
     create_battery_cell(),
+    create_branch_cell(),
   }
 
   local elements = util.map(cells, function(cell, i)

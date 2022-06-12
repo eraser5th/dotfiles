@@ -20,6 +20,7 @@ local icons = {
   SOLID_LEFT_ARROW = utf8.char(0xe0b2),
   SOLID_RIGHT_HALF_CIRCLE = utf8.char(0xe0b4),
   SOLID_LEFT_HALF_CIRCLE = utf8.char(0xe0b6),
+  GIT_BRANCH = utf8.char(0xe0a0),
 }
 
 icons.fn = {
