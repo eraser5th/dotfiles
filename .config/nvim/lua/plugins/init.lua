@@ -19,15 +19,6 @@ jetpack.setup({
   { 'itchyny/lightline.vim' },
   { 'Yggdroot/indentLine' },
 
-  -- fern
-  { 'lambdalisue/fern.vim', run = "Source 'plugins/fern.vim'" },
-    { 'lambdalisue/fern-git-status.vim' },
-    { 'lambdalisue/nerdfont.vim' },
-    { 'lambdalisue/glyph-palette.vim' },
-    { 'lambdalisue/fern-renderer-nerdfont.vim' },
-    { 'lambdalisue/fern-hijack.vim' },
-    { 'yuki-yano/fern-preview.vim' },
-
   -- fazy finder
   { '~/.fzf' },
   { 'junegunn/fzf.vim', run = "Source 'plugins/fzf.vim'" },
@@ -57,12 +48,11 @@ jetpack.setup({
       let g:preview_markdown_parser = 'glow'
     ]] },
   { 'gelguy/wilder.nvim', run = "Source 'plugins/wilder.nvim'" },
+  { 'kyazdani42/nvim-web-devicons' },
+  { 'kyazdani42/nvim-tree.lua' },
 })
 
 local function loadSetting()
-  if jetpack.tap('fern.vim') == 1 then
-    vim.cmd('Source "plugins/fern.vim"')
-  end
   if jetpack.tap('fzf.vim') == 1 then
     require('plugins.fzf')
   end
@@ -98,6 +88,9 @@ local function loadSetting()
   end
   if jetpack.tap('wilder.nvim') == 1 then
     require('plugins.wilder-nvim')
+  end
+  if jetpack.tap('nvim-tree.lua') == 1 then
+    require('plugins.nvim-tree')
   end
 end
 

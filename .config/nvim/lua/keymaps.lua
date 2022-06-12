@@ -5,7 +5,6 @@ local leader = '<Leader>'
 local window = '[window]'
 local resize = '[Resize]'
 local tab = '[Tab]'
-local fern = '[Fern]'
 
 vim.g.mapleader = ' '
 
@@ -66,12 +65,6 @@ local keymaps = {
   -- terminal
   { 'n', leader .. "'", ':terminal<CR>' },
   { 't', 'kj', '<C-\\><C-n>' },
-
-  -- fern
-  { 'n', leader .. 'f', fern, { remap = true } },
-    { 'n', fern, leader .. 'f' },
-    { 'n', fern .. 'w', ':Fern . -reveal=%<CR>' },
-    { 'n', fern .. 'd', ':Fern . -reveal=% -drawer<CR>' },
 
   -- save and quit
   { 'n', leader .. 'w<CR>', ':w<CR>' },
