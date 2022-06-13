@@ -3,7 +3,7 @@ local vim = vim
 local set = vim.opt
 
 local function show_documentation()
-  vim.cmd('call CocActionAsync("do_hover")')
+  vim.cmd('call CocActionAsync("doHover")')
 end
 
 local keyMappings = {
