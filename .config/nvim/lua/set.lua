@@ -38,6 +38,7 @@ set.wrap = true
 set.breakindent = true
 set.linebreak = true
 set.pumheight = 5
+-- set.ambiwidth = 'double'
 -- Display }}}
 
 -- Cursor {{{
