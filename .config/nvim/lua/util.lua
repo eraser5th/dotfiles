@@ -1,4 +1,5 @@
 local vim = vim
+local jetpack = require('jetpack')
 
 local M = {}
 
@@ -21,6 +22,12 @@ end
 ---@param keymap Keymap
 function M.setKeymap(keymap)
   vim.keymap.set(keymap[1], keymap[2], keymap[3], keymap[4])
+end
+
+function M.loadPluginConfigFile(pluginName, configFile)
+  if jetpack.tap(pluginName) == 1 then
+    require(configFile)
+  end
 end
 
 return M
