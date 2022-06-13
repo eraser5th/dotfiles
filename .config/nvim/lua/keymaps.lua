@@ -8,6 +8,7 @@ local tab = '[Tab]'
 
 vim.g.mapleader = ' '
 
+-- These keymaps are plugin-independent
 local keymaps = {
   -- { 'mode', 'lhs', 'rhs' | rhs , options }
   -- misc

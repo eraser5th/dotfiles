@@ -77,9 +77,9 @@ local function loadSetting()
   util.loadPluginConfigFile('telescope.nvim', 'plugins.telescope')
 
   -- lsp
-  util.loadPluginConfigFile('ale', 'plugins.ale')
-  util.loadPluginConfigFile('neoclide/coc.nvim', 'plugins.coc')
-  util.loadPluginConfigFile('nvim-treesitter', 'plugins.nvim-treesitter')
+  util.loadPluginConfigFile('ale', 'plugins.lsp.ale')
+  util.loadPluginConfigFile('coc.nvim', 'plugins.lsp.coc')
+  util.loadPluginConfigFile('nvim-treesitter', 'plugins.lsp.nvim-treesitter')
 
   -- colorscheme
   util.loadPluginConfigFile('tokyonight-vim', 'plugins.colorscheme.tokyonight-vim')
@@ -87,9 +87,9 @@ local function loadSetting()
 
 
   -- highlight
-  util.loadPluginConfigFile('illuminate', 'plugins.vim-illuminate')
-  util.loadPluginConfigFile('quickhl', 'plugins.vim-quickhl')
-  util.loadPluginConfigFile('modes.nvim', 'plugins.modes')
+  util.loadPluginConfigFile('illuminate', 'plugins.highlight.vim-illuminate')
+  util.loadPluginConfigFile('quickhl', 'plugins.highlight.vim-quickhl')
+  util.loadPluginConfigFile('modes.nvim', 'plugins.highlight.modes')
 
   -- layout
   util.loadPluginConfigFile('sidebar.nvim', 'plugins.layout.sidebar')
