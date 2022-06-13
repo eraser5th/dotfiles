@@ -43,6 +43,7 @@ vim.g.coc_global_extensions = {
   'coc-vimlsp',
   'coc-jedi',
   'coc-diagnostic',
+  'coc-lua',
 }
 
 --   inoremap <silent><expr> <tab> pumvisible() ? coc#_select_confirm()
