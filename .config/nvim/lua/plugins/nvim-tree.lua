@@ -15,7 +15,7 @@ local mappings = {
     { key = "h",                              action = "close_node"       },
     { key = "!",                              action = "toggle_dotfiles"  },
     { key = "<C-r>",                          action = "refresh"          },
-    { key = "D",                              action = "delete"           },
+    { key = "D",                              action = "remove"           },
     { key = "N",                              action = "create"           },
     { key = "R",                              action = "rename"           },
     { key = "S",                              action = "system_open"      },

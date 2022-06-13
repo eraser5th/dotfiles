@@ -19,27 +19,44 @@ jetpack.setup({
   { 'itchyny/lightline.vim' },
   { 'Yggdroot/indentLine' },
 
+  -- exproler
+  { 'kyazdani42/nvim-web-devicons' },
+  { 'kyazdani42/nvim-tree.lua' },
+
   -- fazy finder
-  { '~/.fzf' },
-  { 'junegunn/fzf.vim', run = "Source 'plugins/fzf.vim'" },
+  -- { '~/.fzf' },
+  -- { 'junegunn/fzf.vim', run = "Source 'plugins/fzf.vim'" },
+  { 'nvim-telescope/telescope.nvim' },
+    { 'nvim-telescope/telescope-media-files.nvim' },
 
   -- git
   { 'tpope/vim-fugitive' },
   { 'airblade/vim-gitgutter' },
 
   -- lsp
-  { 'dense-analysis/ale', run = "Source 'plugins/ale.vim'" },
+  { 'dense-analysis/ale' },
   { 'maximbaz/lightline-ale' },
-  { "neoclide/coc.nvim", branch = 'release', run = "Source 'plugins/coc.nvim.vim'" },
-  { 'nvim-treesitter/nvim-treesitter', run = "Source 'plugins/nvim-treesitter.vim'"},
+  { "neoclide/coc.nvim", branch = 'release' },
+  { 'nvim-treesitter/nvim-treesitter'},
+    { 'nvim-treesitter/nvim-treesitter-context' },
+    -- { 'haringsrob/nvim_context_vt' },
 
   -- colorscheme
-  { 'ghifarit53/tokyonight-vim', run = "Source 'plugins/tokyonight-vim.vim'" },
+  { 'ghifarit53/tokyonight-vim' },
   { 'eraser5th/HololiveColors.vim', run = "let g:hololive_random = 1" },
   { "EdenEast/nightfox.nvim" },
 
+  -- highlight
+  { 'RRethy/vim-illuminate' },
+  { 't9md/vim-quickhl' },
+  { 'mvllow/modes.nvim' },
+
+  -- layout
+  { 'sidebar-nvim/sidebar.nvim' },
+  { 'petertriho/nvim-scrollbar' },
+
   -- util
-  { 'easymotion/vim-easymotion', run = "Source 'plugins/vim-easymotion.vim'" },
+  { 'easymotion/vim-easymotion' },
   { 'skanehira/translate.vim' },
   { 'github/copilot.vim' },
   { 'skanehira/preview-markdown.vim', run = [[
@@ -47,14 +64,24 @@ jetpack.setup({
       let g:preview_markdown_auto_update = 1
       let g:preview_markdown_parser = 'glow'
     ]] },
-  { 'gelguy/wilder.nvim', run = "Source 'plugins/wilder.nvim'" },
-  { 'kyazdani42/nvim-web-devicons' },
-  { 'kyazdani42/nvim-tree.lua' },
+  { 'gelguy/wilder.nvim' },
+  { 'rcarriga/nvim-notify' },
+  { 'tyru/open-browser.vim' },
+  { 'tyru/open-browser-github.vim' },
+  { 'renerocksai/telekasten.nvim' },
+  { 'renerocksai/calendar-vim' },
+
+  -- lua library
+  { 'nvim-lua/plenary.nvim' },
+  { 'nvim-lua/popup.nvim' },
 })
 
 local function loadSetting()
-  if jetpack.tap('fzf.vim') == 1 then
-    require('plugins.fzf')
+  -- if jetpack.tap('fzf.vim') == 1 then
+    -- require('plugins.fzf')
+  -- end
+  if jetpack.tap('telescope.nvim') == 1 then
+    require('plugins.telescope')
   end
   if jetpack.tap('ale') == 1 then
     require('plugins.ale')
@@ -91,6 +118,33 @@ local function loadSetting()
   end
   if jetpack.tap('nvim-tree.lua') == 1 then
     require('plugins.nvim-tree')
+  end
+  if jetpack.tap('nvim-notify') == 1 then
+    vim.notify = require("notify")
+  end
+
+  -- highlight
+  if jetpack.tap('vim-illuminate') == 1 then
+    require('plugins.vim-illuminate')
+  end
+  if jetpack.tap('vim-quickhl') == 1 then
+    require('plugins.vim-quickhl')
+  end
+  if jetpack.tap('modes.nvim') == 1 then
+    require('plugins.modes')
+  end
+
+  -- layout
+  if jetpack.tap('sidebar.nvim') == 1 then
+    require('plugins.layout.sidebar')
+  end
+  if jetpack.tap('nvim-scrollbar') == 1 then
+    require('plugins.layout.nvim-scrollbar')
+  end
+
+  -- util
+  if jetpack.tap('telekasten.nvim') == 1 then
+    require('plugins.util.telekasten')
   end
 end
 
