@@ -48,6 +48,7 @@ jetpack.setup({
   { 'sidebar-nvim/sidebar.nvim' },
   { 'petertriho/nvim-scrollbar' },
   { 'itchyny/lightline.vim' },
+  { 'sunjon/stylish.nvim' },
 
   -- misc
   { 'easymotion/vim-easymotion' },
@@ -93,7 +94,8 @@ local function loadSetting()
 
   -- layout
   util.loadPluginConfigFile('sidebar.nvim', 'plugins.layout.sidebar')
-  util.loadPluginConfigFile('scrollbar', 'plugins.layout.nvim-scrollbar')
+  util.loadPluginConfigFile('nvim-scrollbar', 'plugins.layout.nvim-scrollbar')
+  util.loadPluginConfigFile('stylish.nvim', 'plugins.layout.stylish')
 
   -- misc
   util.loadPluginConfigFile('easymotion', 'plugins.misc.vim-easymotion')
