@@ -10,6 +10,7 @@ This is my neovim configuration.
 - `neovim >= 0.7.0`　https://github.com/neovim/neovim/releases/tag/v0.7.0](https://github.com/neovim/neovim/releases/tag/v0.7.0)
 - `gh` [https://github.com/cli/cli](https://github.com/cli/cli)
 - `ripgrep` [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
+- `Nerd Font` [https://www.nerdfonts.com/](https://www.nerdfonts.com/)
 
 ## Install
 
