@@ -3,6 +3,29 @@
 "     Copyrigh (c) 2022 TANGUCHI Masaya.
 "          All Rights Reserved.
 "=============================================
+"
+"================================================================================
+" MIT License
+" Copyright (c) 2022 TANIGUCHI Masaya
+"
+" Permission is hereby granted, free of charge, to any person obtaining a copy
+" of this software and associated documentation files (the "Software"), to deal
+" in the Software without restriction, including without limitation the rights
+" to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+" copies of the Software, and to permit persons to whom the Software is
+" furnished to do so, subject to the following conditions:
+"
+" The above copyright notice and this permission notice shall be included in all
+" copies or substantial portions of the Software.
+
+" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+" IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+" FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+" LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+" OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+" SOFTWARE.
+" ===============================================================================
 
 let g:jetpack#optimization =
   \ get(g:, 'jetpack#optimization', 1)
@@ -256,7 +279,7 @@ endfunction
 
 function! jetpack#clean() abort
   for [pkg_name, pkg] in items(s:packages)
-    if isdirectory(pkg.path) 
+    if isdirectory(pkg.path)
       if has_key(pkg, 'commit')
         if system(printf('git -c "%s" cat-file -t %s', pkg.path, pkg.commit)) !~# 'commit'
           call delete(pkg.path)
@@ -266,7 +289,7 @@ function! jetpack#clean() abort
         if get(pkg, 'branch', get(pkg, 'tag')) != branch
           call delete(pkg.path, 'rf')
         endif
-      endif 
+      endif
     endif
   endfor
 endfunction
@@ -550,7 +573,7 @@ package.preload['jetpack'] = function()
       plugin[1] = nil
       if vim.fn.type(plugin) == vim.v.t_list then
         vim.fn['jetpack#add'](name)
-      else 
+      else
         for key, value in pairs(alias) do
           if plugin[key] ~= nil then
             plugin[value] = plugin[key]
