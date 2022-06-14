@@ -18,4 +18,4 @@ First, please clone this project and make symbolic link to your config directory
 
 Second, run nvim.
 
-Finish!(Some plug-ins are not loaded because they are not available immediately after installation)
+Finish!(Some plugins are not loaded because they are not available immediately after installation)
