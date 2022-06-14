@@ -38,6 +38,7 @@ jetpack.setup({
   { 'ghifarit53/tokyonight-vim' },
   { 'eraser5th/HololiveColors.vim' },
   { "EdenEast/nightfox.nvim" },
+  { "rebelot/kanagawa.nvim" },
 
   -- highlight
   { 'RRethy/vim-illuminate' },
@@ -89,6 +90,7 @@ local function loadSetting()
   -- colorscheme
   util.loadPluginConfigFile('tokyonight-vim', 'plugins.colorscheme.tokyonight-vim')
   util.loadPluginConfigFile('nightfox.nvim', 'plugins.colorscheme.nightfox')
+  util.loadPluginConfigFile('kanagawa.nvim', 'plugins.colorscheme.kanagawa')
 
 
   -- highlight
