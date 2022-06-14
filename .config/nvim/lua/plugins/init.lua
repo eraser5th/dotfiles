@@ -24,6 +24,7 @@ jetpack.setup({
   -- git
   { 'tpope/vim-fugitive' },
   { 'airblade/vim-gitgutter' },
+  { 'pwntester/octo.nvim' },
 
   -- lsp
   { 'dense-analysis/ale' },
@@ -76,6 +77,9 @@ local function loadSetting()
 
   -- fazy finder
   util.loadPluginConfigFile('telescope.nvim', 'plugins.telescope')
+
+  -- git
+  util.loadPluginConfigFile('octo.nvim', 'plugins.git.octo')
 
   -- lsp
   util.loadPluginConfigFile('ale', 'plugins.lsp.ale')
