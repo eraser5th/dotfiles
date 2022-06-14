@@ -12,7 +12,7 @@ This is my neovim configuration.
 
 ## Install
 
-First, plese clone this project and make symbolic link to your config directory(`~/.config/nvim`).
+First, please clone this project and make symbolic link to your config directory(eg. `~/.config/nvim`).
 
 Second, run nvim and execute `:JetpackSync`.
 
