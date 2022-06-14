@@ -53,7 +53,7 @@ jetpack.setup({
   { 'sunjon/stylish.nvim' },
 
   -- misc
-  { 'easymotion/vim-easymotion' },
+  { 'phaazon/hop.nvim' },
   { 'skanehira/translate.vim' },
   { 'github/copilot.vim' },
   { 'skanehira/preview-markdown.vim', },
@@ -104,7 +104,7 @@ local function loadSetting()
   util.loadPluginConfigFile('stylish.nvim', 'plugins.layout.stylish')
 
   -- misc
-  util.loadPluginConfigFile('easymotion', 'plugins.misc.vim-easymotion')
+  util.loadPluginConfigFile('hop.nvim', 'plugins.misc.hop')
   util.loadPluginConfigFile('translate.vim', 'plugins.misc.translate')
   util.loadPluginConfigFile('wilder.nvim', 'plugins.misc.wilder')
   util.loadPluginConfigFile('telekasten.nvim', 'plugins.misc.telekasten')

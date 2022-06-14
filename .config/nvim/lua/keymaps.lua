@@ -26,10 +26,8 @@ local keymaps = {
   { 'n', '<C-x>', '<Nop>' },
   { 'n', 'Y', 'y$' },
   { 'n', 'x', '"_x' },
-  { 'n', leader .. 'h', '0' },
   { 'n', leader .. 'j', '7j' },
   { 'n', leader .. 'k', '7k' },
-  { 'n', leader .. 'l', '$' },
   { 'n', leader .. 'ya', '"ayyggVGy/<C-r>a<CR>' },
 
   -- window
