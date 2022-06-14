@@ -25,9 +25,10 @@ function M.setKeymap(keymap)
 end
 
 function M.loadPluginConfigFile(pluginName, configFile)
-  if jetpack.tap(pluginName) == 1 then
-    require(configFile)
+  if !(jetpack.tap(pluginName) == 1) then
+    vim.cmd('call jetpack#sync()')
   end
+  require(configFile)
 end
 
 return M
