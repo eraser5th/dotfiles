@@ -38,7 +38,6 @@ jetpack.setup({
   { 'ghifarit53/tokyonight-vim' },
   { 'eraser5th/HololiveColors.vim' },
   { "EdenEast/nightfox.nvim" },
-  { "rebelot/kanagawa.nvim" },
 
   -- highlight
   { 'RRethy/vim-illuminate' },
@@ -72,7 +71,16 @@ jetpack.setup({
     { 'vim-denops/denops-helloworld.vim' },
 })
 
-local function loadSetting()
+local function installAndLoadSetting()
+  local isExistNotInstalledPlugin = false
+
+  util.forEach(jetpack.names(), function(plugin, _)
+    if not jetpack.tap(plugin) then
+      isExistNotInstalledPlugin = true
+      jetpack.sync()
+    end
+  end)
+
   -- exproler
   util.loadPluginConfigFile('nvim-tree.lua', 'plugins.nvim-tree')
 
@@ -90,8 +98,6 @@ local function loadSetting()
   -- colorscheme
   util.loadPluginConfigFile('tokyonight-vim', 'plugins.colorscheme.tokyonight-vim')
   util.loadPluginConfigFile('nightfox.nvim', 'plugins.colorscheme.nightfox')
-  util.loadPluginConfigFile('kanagawa.nvim', 'plugins.colorscheme.kanagawa')
-
 
   -- highlight
   util.loadPluginConfigFile('illuminate', 'plugins.highlight.vim-illuminate')
@@ -99,9 +105,11 @@ local function loadSetting()
   util.loadPluginConfigFile('modes.nvim', 'plugins.highlight.modes')
 
   -- layout
-  util.loadPluginConfigFile('sidebar.nvim', 'plugins.layout.sidebar')
-  util.loadPluginConfigFile('nvim-scrollbar', 'plugins.layout.nvim-scrollbar')
   util.loadPluginConfigFile('stylish.nvim', 'plugins.layout.stylish')
+  if not isExistNotInstalledPlugin then
+    util.loadPluginConfigFile('nvim-scrollbar', 'plugins.layout.nvim-scrollbar')
+    util.loadPluginConfigFile('sidebar.nvim', 'plugins.layout.sidebar')
+  end
 
   -- misc
   util.loadPluginConfigFile('hop.nvim', 'plugins.misc.hop')
@@ -114,4 +122,4 @@ local function loadSetting()
   end
 end
 
-loadSetting()
+installAndLoadSetting()
