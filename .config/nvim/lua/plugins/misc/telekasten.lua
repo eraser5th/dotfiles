@@ -1,10 +1,4 @@
 local home = vim.fn.expand("~/zettelkasten")
--- NOTE for Windows users:
--- - don't use Windows
--- - try WSL2 on Windows and pretend you're on Linux
--- - if you **must** use Windows, use "/Users/myname/zettelkasten" instead of "~/zettelkasten"
--- - NEVER use "C:\Users\myname" style paths
--- - Using `vim.fn.expand("~/zettelkasten")` should work now but mileage will vary with anything outside of finding and opening files
 require('telekasten').setup({
     home         = home,
 
@@ -86,7 +80,7 @@ require('telekasten').setup({
     tag_notation = "#tag",
 
     -- command palette theme: dropdown (window) or ivy (bottom panel)
-    command_palette_theme = "ivy",
+    command_palette_theme = "popup",
 
     -- tag list theme:
     -- get_cursor: small tag list at cursor; ivy and dropdown like above
@@ -130,3 +124,7 @@ require('telekasten').setup({
     -- should all links be updated when a file is renamed
     rename_update_links = true,
 })
+
+vim.cmd([[
+nnoremap <leader>z :lua require('telekasten').panel()<CR>
+]])
