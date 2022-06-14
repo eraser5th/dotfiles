@@ -7,6 +7,7 @@ This is my neovim configuration.
 
 ## Prerequired
 
+- `neovim >= 0.7.0`　https://github.com/neovim/neovim/releases/tag/v0.7.0](https://github.com/neovim/neovim/releases/tag/v0.7.0)
 - `gh` [https://github.com/cli/cli](https://github.com/cli/cli)
 - `ripgrep` [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 
