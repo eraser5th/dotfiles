@@ -14,8 +14,6 @@ This is my neovim configuration.
 
 First, please clone this project and make symbolic link to your config directory(eg. `~/.config/nvim`).
 
-Second, run nvim and execute `:JetpackSync`.
+Second, run nvim.
 
-Third, close nvim and rerun nvim.
-
-Finish!
+Finish!(Some plug-ins are not loaded because they are not available immediately after installation)
