@@ -38,6 +38,7 @@ jetpack.setup({
   { 'ghifarit53/tokyonight-vim' },
   { 'eraser5th/HololiveColors.vim' },
   { "EdenEast/nightfox.nvim" },
+  { "rebelot/kanagawa.nvim" },
 
   -- highlight
   { 'RRethy/vim-illuminate' },
@@ -52,7 +53,7 @@ jetpack.setup({
   { 'sunjon/stylish.nvim' },
 
   -- misc
-  { 'easymotion/vim-easymotion' },
+  { 'phaazon/hop.nvim' },
   { 'skanehira/translate.vim' },
   { 'github/copilot.vim' },
   { 'skanehira/preview-markdown.vim', },
@@ -89,6 +90,7 @@ local function loadSetting()
   -- colorscheme
   util.loadPluginConfigFile('tokyonight-vim', 'plugins.colorscheme.tokyonight-vim')
   util.loadPluginConfigFile('nightfox.nvim', 'plugins.colorscheme.nightfox')
+  util.loadPluginConfigFile('kanagawa.nvim', 'plugins.colorscheme.kanagawa')
 
 
   -- highlight
@@ -102,7 +104,7 @@ local function loadSetting()
   util.loadPluginConfigFile('stylish.nvim', 'plugins.layout.stylish')
 
   -- misc
-  util.loadPluginConfigFile('easymotion', 'plugins.misc.vim-easymotion')
+  util.loadPluginConfigFile('hop.nvim', 'plugins.misc.hop')
   util.loadPluginConfigFile('translate.vim', 'plugins.misc.translate')
   util.loadPluginConfigFile('wilder.nvim', 'plugins.misc.wilder')
   util.loadPluginConfigFile('telekasten.nvim', 'plugins.misc.telekasten')
