@@ -16,19 +16,33 @@ local keymaps = {
   { 'i', 'fd', '<Esc>' },
   { 'i', 'jj', '<Esc>' },
   { 'n', '<Esc><Esc>', ':noh<CR><Esc>' },
-  { 'n', 'j', 'gj' },
-  { 'n', 'k', 'gk' },
-  { 'v', 'j', 'gj' },
-  { 'v', 'k', 'gk' },
+  -- { 'n', 'j', 'gj' },
+  -- { 'n', 'k', 'gk' },
+  -- { 'v', 'j', 'gj' },
+  -- { 'v', 'k', 'gk' },
   { 'n', '+', '<C-a>' },
   { 'n', '-', '<C-x>' },
   { 'n', '<C-a>', '<Nop>' },
   { 'n', '<C-x>', '<Nop>' },
   { 'n', 'Y', 'y$' },
   { 'n', 'x', '"_x' },
-  { 'n', leader .. 'j', '7j' },
-  { 'n', leader .. 'k', '7k' },
+  -- { 'n', leader .. 'j', '7j' },
+  -- { 'n', leader .. 'k', '7k' },
   { 'n', leader .. 'ya', '"ayyggVGy/<C-r>a<CR>' },
+
+  -- visual move
+  -- vim.cmd([[
+    -- nmap <Leader>j gj<SID><Leader>
+    -- nmap <Leader>k gk<SID><Leader>
+    -- nnoremap <script> <SID>gj gj<SID><Leader>
+    -- nnoremap <script> <SID>gk gk<SID><Leader>
+    -- nmap <SID><Leader> <Nop>
+    -- vmap gj gj<SID><Leader>
+    -- vmap gk gk<SID><Leader>
+    -- vnoremap <script> <SID>gj gj<SID><Leader>
+    -- vnoremap <script> <SID>gk gk<SID><Leader>
+    -- vmap <SID><Leader> <Nop>
+  -- ]])
 
   -- window
   { 'n', leader .. 'w', window, { remap = true } },
@@ -41,8 +55,19 @@ local keymaps = {
     { 'n', window .. 'j', '<C-w>j' },
     { 'n', window .. 'k', '<C-w>k' },
     { 'n', window .. 'l', '<C-w>l' },
+    -- resize
+    -- vim.cmd([[
+      -- nmap <C-w>+ <C-w>+<SID>ws
+      -- nmap <C-w>- <C-w>-<SID>ws
+      -- nmap <C-w>> <C-w>><SID>ws
+      -- nmap <C-w>< <C-w><<SID>ws
+      -- nnoremap <script> <SID>ws+ <C-w>+<SID>ws
+      -- nnoremap <script> <SID>ws- <C-w>-<SID>ws
+      -- nnoremap <script> <SID>ws> <C-w>><SID>ws
+      -- nnoremap <script> <SID>ws< <C-w><<SID>ws
+      -- nmap <SID>ws <Nop>
+    -- ]])
 
-    --resize
   { 'n', leader .. 'r', resize, { remap = true } },
     { 'n', resize, 	  leader .. 'r' },
     { 'n', resize .. 'h', '<C-w>H' },
