@@ -7,8 +7,9 @@ This is my neovim configuration.
 
 ## Prerequired
 
-- `neovim >= 0.7.0`　https://github.com/neovim/neovim/releases/tag/v0.7.0](https://github.com/neovim/neovim/releases/tag/v0.7.0)
+- `neovim >= 0.7.0`　[https://github.com/neovim/neovim/releases/tag/v0.7.0](https://github.com/neovim/neovim/releases/tag/v0.7.0)
 - `gh` [https://github.com/cli/cli](https://github.com/cli/cli)
+- `deno` [https://deno.land/manual/getting_started/installation](https://deno.land/manual/getting_started/installation)
 - `ripgrep` [https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 - `Nerd Font` [https://www.nerdfonts.com/](https://www.nerdfonts.com/)
 
@@ -18,4 +19,4 @@ First, please clone this project and make symbolic link to your config directory
 
 Second, run nvim.
 
-Finish!(Some plug-ins are not loaded because they are not available immediately after installation)
+Finish!(Some plugins are not loaded because they are not available immediately after installation)
