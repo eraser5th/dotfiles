@@ -43,7 +43,8 @@ jetpack.setup({
   { 'RRethy/vim-illuminate' },
   { 't9md/vim-quickhl' },
   { 'mvllow/modes.nvim' },
-  { 'Yggdroot/indentLine' },
+  -- { 'Yggdroot/indentLine' },
+  { "lukas-reineke/indent-blankline.nvim" },
 
   -- layout
   { 'sidebar-nvim/sidebar.nvim' },
@@ -62,6 +63,7 @@ jetpack.setup({
   { 'tyru/open-browser-github.vim' },
   { 'renerocksai/telekasten.nvim' },
   { 'renerocksai/calendar-vim' },
+  -- { 'jubnzv/virtual-types.nvim' },
 
   -- library and environment
   { 'nvim-lua/plenary.nvim' },
@@ -102,7 +104,8 @@ local function installAndLoadSetting()
   -- highlight
   util.loadPluginConfigFile('illuminate', 'plugins.highlight.vim-illuminate')
   util.loadPluginConfigFile('quickhl', 'plugins.highlight.vim-quickhl')
-  util.loadPluginConfigFile('modes.nvim', 'plugins.highlight.modes')
+  -- util.loadPluginConfigFile('modes.nvim', 'plugins.highlight.modes')
+  util.loadPluginConfigFile('indent-blankline.nvim', 'plugins.highlight.indent-blankline')
 
   -- layout
   util.loadPluginConfigFile('stylish.nvim', 'plugins.layout.stylish')
