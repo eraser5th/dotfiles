@@ -4,7 +4,6 @@ This is my neovim configuration.
 
 <img width="1680" alt="スクリーンショット 2022-06-14 17 20 01" src="https://user-images.githubusercontent.com/83107074/173529993-6086adbd-eaa5-4efb-b806-a8f832be0d65.png">
 
-
 ## Prerequired
 
 - `neovim >= 0.7.0`　[https://github.com/neovim/neovim/releases/tag/v0.7.0](https://github.com/neovim/neovim/releases/tag/v0.7.0)
