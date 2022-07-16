@@ -25,10 +25,11 @@ jetpack.setup({
   { 'tpope/vim-fugitive' },
   { 'airblade/vim-gitgutter' },
   { 'pwntester/octo.nvim' },
+  { 'lewis6991/gitsigns.nvim' },
 
   -- lsp
   { 'dense-analysis/ale' },
-  { 'maximbaz/lightline-ale' },
+  -- { 'maximbaz/lightline-ale' }, -- this require lightline
   { "neoclide/coc.nvim", branch = 'release' },
   { 'nvim-treesitter/nvim-treesitter'},
     { 'nvim-treesitter/nvim-treesitter-context' },
@@ -44,12 +45,13 @@ jetpack.setup({
   { 't9md/vim-quickhl' },
   { 'mvllow/modes.nvim' },
   -- { 'Yggdroot/indentLine' },
-  { "lukas-reineke/indent-blankline.nvim" },
+  -- { "lukas-reineke/indent-blankline.nvim" },
+  { 'rrethy/vim-hexokinase', run = 'make hexokinase' },
 
   -- layout
   { 'sidebar-nvim/sidebar.nvim' },
   { 'petertriho/nvim-scrollbar' },
-  { 'itchyny/lightline.vim' },
+  { 'glepnir/galaxyline.nvim' },
   { 'sunjon/stylish.nvim' },
 
   -- misc
@@ -63,6 +65,8 @@ jetpack.setup({
   { 'tyru/open-browser-github.vim' },
   { 'renerocksai/telekasten.nvim' },
   { 'renerocksai/calendar-vim' },
+  { 'anuvyklack/hydra.nvim' },
+    { 'anuvyklack/keymap-layer.nvim' },
   -- { 'jubnzv/virtual-types.nvim' },
 
   -- library and environment
@@ -100,6 +104,7 @@ local function installAndLoadSetting()
   -- colorscheme
   util.loadPluginConfigFile('tokyonight-vim', 'plugins.colorscheme.tokyonight-vim')
   util.loadPluginConfigFile('nightfox.nvim', 'plugins.colorscheme.nightfox')
+  vim.cmd("colorscheme duskfox")
 
   -- highlight
   util.loadPluginConfigFile('illuminate', 'plugins.highlight.vim-illuminate')
@@ -109,6 +114,8 @@ local function installAndLoadSetting()
 
   -- layout
   util.loadPluginConfigFile('stylish.nvim', 'plugins.layout.stylish')
+  -- util.loadPluginConfigFile('lualine.nvim', 'plugins.layout.lualine')
+  util.loadPluginConfigFile('galaxyline.nvim', 'plugins.layout.galaxyline')
   if not isExistNotInstalledPlugin then
     util.loadPluginConfigFile('nvim-scrollbar', 'plugins.layout.nvim-scrollbar')
     util.loadPluginConfigFile('sidebar.nvim', 'plugins.layout.sidebar')
@@ -123,6 +130,8 @@ local function installAndLoadSetting()
   if jetpack.tap('nvim-notify') == 1 then
     vim.notify = require("notify")
   end
+  util.loadPluginConfigFile('hydra.nvim', 'plugins.misc.hydra')
+  util.loadPluginConfigFile('gitsigns.nvim', 'plugins.misc.gitsigns')
 end
 
 installAndLoadSetting()
