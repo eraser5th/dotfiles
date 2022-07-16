@@ -48,11 +48,27 @@ local function SectionStart(condition_)
   })
 end
 
+local function SectionStartUpsideDown(condition_)
+  return create_cell('SectionStartUpsideDown', {
+    provider = function () return "" end,
+    condition = condition_,
+    highlight = {colors.section_bg, colors.bg},
+  })
+end
+
 local function SectionEnd(condition_)
   return create_cell('SectionEnd', {
     provider = function() return '' end,
     condition = condition_,
-    highlight = {colors.bg, colors.section_bg, 'bold'},
+    highlight = {colors.bg, colors.section_bg},
+  })
+end
+
+local function SectionEndUpsideDown(condition_)
+  return create_cell('SectionEndUpsideDown', {
+    provider = function() return '' end,
+    condition = condition_,
+    highlight = {colors.section_bg, colors.bg},
   })
 end
 
@@ -81,6 +97,10 @@ gls.left = {
     separator = '',
   }),
   SectionEnd(),
+
+  SpaceOfSection(),
+  SpaceOfSection(),
+
   create_cell('FileIcon', {
     provider = 'FileIcon',
     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color, colors.section_bg}
@@ -90,7 +110,6 @@ gls.left = {
     highlight = {colors.fg, colors.section_bg},
   }),
 
-  SpaceOfSection(),
   SpaceOfSection(),
 
   -- git status start
@@ -129,9 +148,7 @@ gls.left = {
   SectionEnd(condition.check_git_workspace),
   -- git status end
 
-  SpaceOfSection(),
-
-  SectionStart(),
+  SectionStartUpsideDown(),
   create_cell('GetLspClient', {
     provider = 'GetLspClient',
     icon = '   ',
@@ -141,9 +158,7 @@ gls.left = {
     provider = function () return " " end,
     highlight = {colors.bg, colors.bg},
   }),
-  SectionEnd(),
-
-  SpaceOfSection(),
+  SectionEndUpsideDown(),
 
   -- diagnostic start
   SectionStart(diagnosticCondition),
@@ -186,9 +201,7 @@ gls.right = {
   SpaceInSection(),
   SectionEnd(),
 
-  SpaceOfSection(),
-
-  SectionStart(),
+  SectionStartUpsideDown(),
   SpaceInSection(),
   create_cell('LinePercent', {
     provider = 'LinePercent',
@@ -199,9 +212,7 @@ gls.right = {
     provider = 'LineColumn',
     highlight = {colors.fg, colors.bg},
   }),
-  SectionEnd(),
-
-  SpaceOfSection(),
+  SectionEndUpsideDown(),
 
   SectionStart(),
   create_cell('FileFormat', {
