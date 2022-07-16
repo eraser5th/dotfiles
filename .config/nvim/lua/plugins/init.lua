@@ -23,7 +23,7 @@ jetpack.setup({
 
   -- git
   { 'tpope/vim-fugitive' },
-  { 'airblade/vim-gitgutter' },
+  -- { 'airblade/vim-gitgutter' },
   { 'pwntester/octo.nvim' },
   { 'lewis6991/gitsigns.nvim' },
 
@@ -95,6 +95,7 @@ local function installAndLoadSetting()
 
   -- git
   util.loadPluginConfigFile('octo.nvim', 'plugins.git.octo')
+  -- util.loadPluginConfigFile('vim-gitgutter', 'plugins.git.vim-gitgutter')
 
   -- lsp
   util.loadPluginConfigFile('ale', 'plugins.lsp.ale')
