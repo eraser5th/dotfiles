@@ -25,9 +25,6 @@ local M = {
     util.forEach(lua_modules, function(module, _)
       require(module)
     end)
-
-    vim.cmd("colorscheme duskfox")
-    vim.g.lightline = { colorscheme = "duskfox" }
   end
 }
 
