@@ -24,7 +24,7 @@ M.get_git_status_color = function ()
     end
 
     if color ~= colors.red then
-      if statusIs({"A ", "D ", "UU", "AA"}) then
+      if statusIs({"M ", "A ", "D ", "UU", "AA"}) then
         color = colors.yellow
       end
     end

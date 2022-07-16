@@ -9,7 +9,8 @@ local function mode2color(mode)
     V = colors.magenta,
     [''] = colors.magenta,
     v = colors.magenta,
-    R = colors.red
+    R = colors.red,
+    t = colors.orange,
   }
   return mode_colors[mode] or colors.red
 end
@@ -22,7 +23,8 @@ local function mode2alias(mode)
     V      = 'VISUAL',
     [''] = 'VISUAL',
     v      = 'VISUAL',
-    R      = 'REPLACE'
+    R      = 'REPLACE',
+    t      = 'TERMINAL',
   }
   return alias[mode] or mode
 end
