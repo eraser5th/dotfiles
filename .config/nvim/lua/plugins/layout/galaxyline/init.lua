@@ -29,10 +29,10 @@ local diagnosticCondition = function ()
   -- debug
   -- vim.cmd('echo "hint: ' .. tostring(has_hint) .. ', error: ' .. tostring(has_error) .. ', warn: ' .. tostring(has_warn) .. ', info: ' .. tostring(has_info) .. '"')
 
-  vim.cmd('echo "' .. tostring(hint) .. ', ' .. tostring(error) .. ', ' .. tostring(warn) .. ', ' .. tostring(info) .. '"')
+  -- vim.cmd('echo "' .. tostring(hint) .. ', ' .. tostring(error) .. ', ' .. tostring(warn) .. ', ' .. tostring(info) .. '"')
 
-  local _,dia_info = pcall(vim.api.nvim_buf_get_var,0,'coc_diagnostic_info')
-  vim.cmd('echo "' .. tostring(dia_info['warning']) .. '"')
+  -- local _,dia_info = pcall(vim.api.nvim_buf_get_var,0,'coc_diagnostic_info')
+  -- vim.cmd('echo "' .. tostring(dia_info['warning']) .. '"')
 
   -- return true
   -- return has_hint or has_error or has_warn or has_info
