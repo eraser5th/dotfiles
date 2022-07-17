@@ -53,6 +53,8 @@ jetpack.setup({
   { 'petertriho/nvim-scrollbar' },
   { 'glepnir/galaxyline.nvim' },
   { 'sunjon/stylish.nvim' },
+  { 'akinsho/bufferline.nvim' },
+  { 'romgrk/barbar.nvim' },
 
   -- misc
   { 'phaazon/hop.nvim' },
@@ -121,6 +123,8 @@ local function installAndLoadSetting()
     util.loadPluginConfigFile('nvim-scrollbar', 'plugins.layout.nvim-scrollbar')
     util.loadPluginConfigFile('sidebar.nvim', 'plugins.layout.sidebar')
   end
+  util.loadPluginConfigFile('bufferline.nvim', 'plugins.layout.bufferline')
+  util.loadPluginConfigFile('barbar.nvim', 'plugins.layout.barbar')
 
   -- misc
   util.loadPluginConfigFile('hop.nvim', 'plugins.misc.hop')
