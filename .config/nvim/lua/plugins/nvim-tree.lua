@@ -7,11 +7,23 @@ local vim = vim
 
 -- vim.opt.termguicolors = true
 
+local function toggle_replace()
+  local view = require"nvim-tree.view"
+  if view.is_visible() then
+    view.close()
+  else
+    require"nvim-tree".open_replacing_current_buffer()
+  end
+end
+
 util.setKeymap({'n', '<Leader>fw', ':NvimTreeToggle<CR>'})
+-- util.setKeymap({'n', '<Leader>fw', toggle_replace})
+
 local mappings = {
   custom_only = true,
   list = {
     { key = { "l", "o", "<2-LeftMouse>" },    action = "edit"             },
+    { key = "<CR>",                           action = 'edit_in_place'    },
     { key = "h",                              action = "close_node"       },
     { key = "!",                              action = "toggle_dotfiles"  },
     { key = "<C-r>",                          action = "refresh"          },
@@ -37,10 +49,10 @@ local setup_options = {
   ignore_buffer_on_setup = false,
   open_on_setup = false,
   open_on_setup_file = false,
-  open_on_tab = false,
+  open_on_tab = true,
   sort_by = "name",
   update_cwd = false,
-  reload_on_bufenter = false,
+  reload_on_bufenter = true,
   respect_buf_cwd = true,
   view = {
     adaptive_size = true,
@@ -56,7 +68,7 @@ local setup_options = {
     mappings = mappings,
   },
   renderer = {
-    add_trailing = false,
+    add_trailing = true,
     group_empty = false,
     highlight_git = true,
     full_name = false,
@@ -65,10 +77,10 @@ local setup_options = {
     indent_markers = {
       enable = true,
       icons = {
-        corner = "└ ",
-        edge = "│ ",
-        item = "│ ",
-        none = "  ",
+        corner = "└",
+        edge = "│",
+        item = "│",
+        none = " ",
       },
     },
     icons = {
@@ -123,7 +135,7 @@ local setup_options = {
     args = {},
   },
   diagnostics = {
-    enable = false,
+    enable = true,
     show_on_dirs = false,
     icons = {
       hint = "",
@@ -157,7 +169,7 @@ local setup_options = {
       max_folder_discovery = 300,
     },
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
       resize_window = true,
       window_picker = {
         enable = true,
