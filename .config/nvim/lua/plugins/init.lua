@@ -53,7 +53,7 @@ jetpack.setup({
   { 'petertriho/nvim-scrollbar' },
   { 'glepnir/galaxyline.nvim' },
   { 'sunjon/stylish.nvim' },
-  { 'akinsho/bufferline.nvim', tag = "v2.*" },
+  { 'akinsho/bufferline.nvim', tag = "v2.4" },
   { 'romgrk/barbar.nvim' },
 
   -- misc
