@@ -26,8 +26,9 @@ local function create_battery_cell()
   return BATTERY .. string.format(" %.0f%%", battery_percentage)
 end
 
-local function create_branch_cell()
-  return icons.GIT_BRANCH .. ' ' .. git.get_branch_name()
+local function create_branch_cell(pane)
+  local cwd = pane:get_current_working_dir():sub(8)
+  return icons.GIT_BRANCH .. ' ' .. git.get_branch_name(cwd)
 end
 
 local function create_element(cell, fg_color, bg_color)
@@ -55,7 +56,7 @@ return function(window, pane)
     create_cwd_cell(pane),
     create_date_cell(),
     create_battery_cell(),
-    create_branch_cell(),
+    create_branch_cell(pane),
   }
 
   local elements = util.map(cells, function(cell, i)

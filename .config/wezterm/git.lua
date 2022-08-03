@@ -1,10 +1,20 @@
 local wezterm = require('wezterm');
 
-local function get_branch_name()
-  for line in io.popen("git branch"):lines() do
-    local m = line:match("%* (.+)$")
-    if m then
-      return m
+local function str_split(str, sep)
+  local result = {}
+  for match in (str .. sep):gmatch("(.-)" .. sep) do
+    result[#result + 1] = match
+  end
+  return result
+end
+
+local function get_branch_name(cwd)
+  local status_success, status, status_error = wezterm.run_child_process({ 'git', '-C', cwd, 'status', '-s' })
+  local branch_success, branch, branch_error = wezterm.run_child_process({ 'git', '-C', cwd, 'branch' })
+
+  for _, line in ipairs(str_split(branch, '\n')) do
+    if line:find('*') then
+      return line:sub(2)
     end
   end
 
