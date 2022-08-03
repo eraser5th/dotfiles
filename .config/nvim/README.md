@@ -16,6 +16,15 @@ This is my neovim configuration.
 
 First, please clone this project and make symbolic link to your config directory(eg. `~/.config/nvim`).
 
+```sh
+$ git clone https://github.com/eraser5th/dotfiles
+$ mv dotfiles/.config/nvim ~/.config/nvim
+```
+
 Second, run nvim.
+
+```sh
+$ nvim
+```
 
 Finish!(Some plugins are not loaded because they are not available immediately after installation)
