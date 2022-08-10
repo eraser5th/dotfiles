@@ -2,7 +2,7 @@ local wezterm = require 'wezterm';
 local icons = require 'icons';
 
 return function(tab, _, _, _, hover, max_width)
-  local edge_background = "#0b0022"
+  local edge_background = "#5C4D7A"
   local background = "#1b1032"
   local foreground = "#808080"
 
@@ -28,12 +28,12 @@ return function(tab, _, _, _, hover, max_width)
   return {
     {Background={Color=edge_background}},
     {Foreground={Color=edge_foreground}},
-    {Text=icons.SOLID_LEFT_HALF_CIRCLE},
+    {Text=icons.LOWER_RIGHT_TRIANGLE},
     {Background={Color=background}},
     {Foreground={Color=foreground}},
     {Text=title},
-    {Background={Color=edge_background}},
-    {Foreground={Color=edge_foreground}},
-    {Text=icons.SOLID_RIGHT_HALF_CIRCLE},
+    {Background={Color=edge_foreground}},
+    {Foreground={Color=edge_background}},
+    {Text=icons.LOWER_RIGHT_TRIANGLE},
   }
 end
