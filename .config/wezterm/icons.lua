@@ -21,6 +21,10 @@ local icons = {
   SOLID_RIGHT_HALF_CIRCLE = utf8.char(0xe0b4),
   SOLID_LEFT_HALF_CIRCLE = utf8.char(0xe0b6),
   GIT_BRANCH = utf8.char(0xe0a0),
+  LOWER_LEFT_TRIANGLE = utf8.char(0xe0b8),
+  LOWER_RIGHT_TRIANGLE = utf8.char(0xe0ba),
+  UPPER_LEFT_TRIANGLE = utf8.char(0xe0bc),
+  UPPER_RIGHT_TRIANGLE = utf8.char(0xe0be),
 }
 
 icons.fn = {
