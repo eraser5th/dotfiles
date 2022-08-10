@@ -34,6 +34,7 @@ jetpack.setup({
   { 'nvim-treesitter/nvim-treesitter'},
     { 'nvim-treesitter/nvim-treesitter-context' },
     -- { 'haringsrob/nvim_context_vt' },
+  { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' },
 
   -- colorscheme
   { 'ghifarit53/tokyonight-vim' },
@@ -103,6 +104,10 @@ local function installAndLoadSetting()
   util.loadPluginConfigFile('ale', 'plugins.lsp.ale')
   util.loadPluginConfigFile('coc.nvim', 'plugins.lsp.coc')
   util.loadPluginConfigFile('nvim-treesitter', 'plugins.lsp.nvim-treesitter')
+  if isAllInstalled then
+    util.loadPluginConfigFile('lsp_lines.nvim', 'plugins.lsp.lsp_lines')
+  end
+  util.loadPluginConfigFile('lsp_lines.nvim', 'plugins.lsp.lsp_lines')
 
   -- colorscheme
   util.loadPluginConfigFile('tokyonight-vim', 'plugins.colorscheme.tokyonight-vim')
