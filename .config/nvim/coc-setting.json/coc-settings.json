@@ -100,5 +100,11 @@
   "tsserver.enable": true,
   "deno.enable": false,
   "deno.lint": true,
-  "coc.source.file.trimSameExts": []
+  "coc.source.file.trimSameExts": [],
+  "languageserver": {
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": ["nix"]
+    }
+  }
 }
