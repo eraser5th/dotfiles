@@ -80,14 +80,14 @@ jetpack.setup({
 })
 
 local function installAndLoadSetting()
-  local isExistNotInstalledPlugin = false
+  local isAllInstalled = require('lib.Table')
+    .every(jetpack.names(), function(name, _)
+      return jetpack.tap(name)
+    end)
 
-  util.forEach(jetpack.names(), function(plugin, _)
-    if not jetpack.tap(plugin) then
-      isExistNotInstalledPlugin = true
-      jetpack.sync()
-    end
-  end)
+  if not isAllInstalled then
+    jetpack.sync()
+  end
 
   -- exproler
   util.loadPluginConfigFile('nvim-tree.lua', 'plugins.nvim-tree')
@@ -119,7 +119,7 @@ local function installAndLoadSetting()
   util.loadPluginConfigFile('stylish.nvim', 'plugins.layout.stylish')
   -- util.loadPluginConfigFile('lualine.nvim', 'plugins.layout.lualine')
   util.loadPluginConfigFile('galaxyline.nvim', 'plugins.layout.galaxyline')
-  if not isExistNotInstalledPlugin then
+  if isAllInstalled then
     util.loadPluginConfigFile('nvim-scrollbar', 'plugins.layout.nvim-scrollbar')
     util.loadPluginConfigFile('sidebar.nvim', 'plugins.layout.sidebar')
   end
